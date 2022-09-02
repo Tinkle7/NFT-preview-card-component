@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Outfit", sans-serif;
+        background-color: hsl(217, 54%, 11%);
+        color: hsl(215, 51%, 70%);
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #container {
+        max-width: 23%;
+        margin: auto;
+        padding: 20px;
+        display: grid;
+        row-gap: 20px;
+        background-color: hsl(216, 50%, 16%);
+        border-radius: 10px;
+      }
+      #img_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+      #img_container > img {
+        width: 100%;
+      }
+      #second_img_container {
+        width: 100%;
+        height: 100%;
+        background-color: hsl(178, 100%, 50%);
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+      }
+
+      #second_img_container:hover {
+        opacity: 0.5;
+      }
+
+      #hover_img_container {
+        width: 20%;
+        margin: auto;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #hover_img {
+        width: 100%;
+      }
+      #details_container {
+        display: grid;
+        row-gap: 20px;
+      }
+      h3 {
+        color: hsl(0, 0%, 100%);
+      }
+      #details_container > p {
+        font-size: 14px;
+      }
+      #eth_days_container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .sub_container {
+        display: flex;
+      }
+      .icon_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+      }
+      .icon_container > img {
+        width: 100%;
+      }
+      .sub_container > p {
+        font-size: 14px;
+      }
+      #horizontal_line {
+        border: none;
+        height: 0.1vh;
+        background-color: hsl(214, 30%, 32%);
+      }
+
+      #creator_container {
+        display: flex;
+      }
+      #avtar_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 10%;
+        margin-right: 10px;
+        border: 1px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      #avtar_container > img {
+        width: 100%;
+      }
+      #creator_name_container {
+        display: flex;
+        align-items: center;
+      }
+      #creator_name_container > p > span {
+        color: hsl(0, 0%, 100%);
+      }
+      #creator_name_container > p > span:hover,
+      #eth_container:hover,
+      h3:hover {
+        color: hsl(178, 100%, 50%);
+        cursor: pointer;
+      }
+
+      #img_container:hover {
+        cursor: pointer;
+        background-color: hsl(178, 100%, 50%);
+      }
+      @media all and (max-width: 768px) {
+        #container {
+          max-width: 43%;
+        }
+      }
+
+      @media all and (max-width: 480px) {
+        body {
+          height: 75vh;
+        }
+        #container {
+          max-width: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="img_container">
+        <img src="/images/image-equilibrium.jpg" alt="" />
+        <div id="second_img_container">
+          <div id="hover_img_container">
+            <img src="/images/icon-view.svg" alt="" id="hover_img" />
+          </div>
+        </div>
+      </div>
+      <div id="details_container">
+        <h3>Equilibrium #3429</h3>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div id="eth_days_container">
+          <div class="sub_container" id="eth_container">
+            <div class="icon_container">
+              <img src="/images/icon-ethereum.svg" alt="" srcset="" />
+            </div>
+            <p>0.041 ETH</p>
+          </div>
+          <div class="sub_container">
+            <div class="icon_container">
+              <img src="/images/icon-clock.svg" alt="" srcset="" />
+            </div>
+            <p>3 days left</p>
+          </div>
+        </div>
+      </div>
+      <hr id="horizontal_line" />
+
+      <div id="creator_container">
+        <div id="avtar_container">
+          <img src="/images/image-avatar.png" alt="" />
+        </div>
+        <div id="creator_name_container">
+          <p>Creation of<span> Jules Wyvern</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.linkedin.com/in/tinkle7/" style="color: blue"
+        >Tinkle Dash</a
+      >.
+    </div>
+  </body>
+</html>
